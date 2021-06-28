@@ -7,12 +7,6 @@
     margin: .5rem auto;
 }
 
-.textInput:focus {
-    outline: none;
-    border-color: #719ECE;
-    box-shadow: 0 0 10px rgb(50, 100, 153);
-}
-
 .Radio {
     font-size: small;
     margin: 0 1rem;

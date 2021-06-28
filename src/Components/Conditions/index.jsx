@@ -6,18 +6,22 @@ import {
 } from './Conditions.module.css'
 
 const conditions = (props) => {
+    const {responseObj, error, loading} = props
+
     return (
         <div className={Wrapper}>
 
-            {props.error && <small className={Small}>Please enter a valid city.</small>}
+            { /* if error catch is true (from Forecast component), then display this */
+                error && <small className={Small}>Please enter a valid city.</small>}
 
-            {props.loading && <div className={Loader} />}
+            {loading && <div className={Loader} />}
 
-
-            {props.responseObj.cod === 200 ?
+            
+            {responseObj.cod === 200 ?
+                /* code === 200 means the city is valid */
                 <div>
-                    <p><strong>{props.responseObj.name}</strong></p>
-                    <p>It is currently {Math.round(props.responseObj.main.temp)} degrees out with {props.responseObj.weather[0].description}.</p>
+                    <p><strong>{responseObj.name}</strong></p>
+                    <p>It is currently {Math.round(responseObj.main.temp)} degrees out with {responseObj.weather[0].description}.</p>
                 </div>
             : null
             }
