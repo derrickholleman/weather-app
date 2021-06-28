@@ -1,20 +1,16 @@
 import React from 'react';
-import {
-    Wrapper,
-    Small,
-    Loader
-} from './Conditions.module.css'
+import styles from './Conditions.module.css'
 
 const conditions = (props) => {
     const {responseObj, error, loading} = props
 
     return (
-        <div className={Wrapper}>
+        <div className={styles.Wrapper}>
 
             { /* if error catch is true (from Forecast component), then display this */
-                error && <small className={Small}>Please enter a valid city.</small>}
+                error && <small className={styles.Small}>Please enter a valid city.</small>}
 
-            {loading && <div className={Loader} />}
+            {loading && <div className={styles.Loader} />}
 
             
             {responseObj.cod === 200 ?

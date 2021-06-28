@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Conditions from '../Conditions';
-import {Button, Radio, textInput} from './Forecast.module.css';
+import styles from './Forecast.module.css';
 
 const Forecast = () => {
 
@@ -62,14 +62,14 @@ const Forecast = () => {
                     placeholder="Enter City"
                     maxLength="50"
                     value={city}
-                    className={textInput}
+                    className={styles.textInput}
                     onChange={(e) => setCity(e.target.value)}
                     />
                 <label>
                     <input
                         type="radio"
                         name="units"
-                        className={Radio}                       
+                        className={styles.Radio}                       
                         checked={unit === "imperial"}
                         value="imperial"
                         onChange={(e) => setUnit(e.target.value)}
@@ -80,14 +80,14 @@ const Forecast = () => {
                     <input
                         type="radio"
                         name="units"
-                        className={Radio}
+                        className={styles.Radio}
                         checked={unit === "metric"}
                         value="metric"
                         onChange={(e) => setUnit(e.target.value)}
                         />
                     Celcius
                 </label>
-                <button type="submit" className={Button}>Get Forecast</button>
+                <button type="submit" className={styles.Button}>Get Forecast</button>
             </form>
 
         </div>
