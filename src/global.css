@@ -10,11 +10,14 @@ body {
 }
 
 .App {
-  display:flex;
-  align-items: center;
+  background-color: #282c34;
+  min-height: 300px;
+  display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 h1 {
@@ -24,7 +27,6 @@ h1 {
 main {
   flex-grow: 1;
   text-align: center;
-  padding: 25px;
 }
 footer {
   padding: 2px;
@@ -32,8 +34,9 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #EEEEEE;
+  background: #282c34;
   font-size: small;
   text-align: center;
+  color: rgb(255, 255, 255);
 }
 
