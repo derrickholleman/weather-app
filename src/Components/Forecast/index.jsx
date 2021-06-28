@@ -54,7 +54,9 @@ const Forecast = () => {
             <Conditions 
             responseObj={responseObj}
             error={error}
-            loading={loading} />
+            loading={loading} 
+            // {JSON.stringify(responseObj)} - JSON data from weather api
+            />
 
             <form onSubmit={getForecast}>
                 <input
@@ -65,28 +67,30 @@ const Forecast = () => {
                     className={styles.textInput}
                     onChange={(e) => setCity(e.target.value)}
                     />
-                <label>
-                    <input
-                        type="radio"
-                        name="units"
-                        className={styles.Radio}                       
-                        checked={unit === "imperial"}
-                        value="imperial"
-                        onChange={(e) => setUnit(e.target.value)}
-                        />
-                    Fahrenheit
-                </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="units"
-                        className={styles.Radio}
-                        checked={unit === "metric"}
-                        value="metric"
-                        onChange={(e) => setUnit(e.target.value)}
-                        />
-                    Celcius
-                </label>
+                
+                    <label>
+                        <input
+                            type="radio"
+                            name="units"
+                            className={styles.Radio}                       
+                            checked={unit === "imperial"}
+                            value="imperial"
+                            onChange={(e) => setUnit(e.target.value)}
+                            />
+                        Fahrenheit
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            name="units"
+                            className={styles.Radio}
+                            checked={unit === "metric"}
+                            value="metric"
+                            onChange={(e) => setUnit(e.target.value)}
+                            />
+                        Celcius
+                    </label>
+                
                 <button type="submit" className={styles.Button}>Get Forecast</button>
             </form>
 

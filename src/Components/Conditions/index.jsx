@@ -14,7 +14,7 @@ const conditions = (props) => {
 
             
             {responseObj.cod === 200 ?
-                /* code === 200 means the city is valid */
+                /* cod === 200 means the city is valid */
                 <div>
                     <p><strong>{responseObj.name}</strong></p>
                     <p>It is currently {Math.round(responseObj.main.temp)} degrees out with {responseObj.weather[0].description}.</p>
