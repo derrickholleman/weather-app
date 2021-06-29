@@ -37,7 +37,7 @@ const Forecast = () => {
             if (response.cod !== 200) {
                 throw new Error()
             }
-            setResponseObj(response);
+            setResponseObj(response); /* displays API fetch data as {responseObj} */
             setLoading(false);
         })
         .catch(err => {
