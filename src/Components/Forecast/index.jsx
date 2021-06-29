@@ -55,7 +55,7 @@ const Forecast = () => {
             responseObj={responseObj}
             error={error}
             loading={loading} 
-            // {JSON.stringify(responseObj)} - JSON data from weather api
+            // {JSON.stringify(responseObj)} - raw JSON data from weather api
             />
 
             <form onSubmit={getForecast}>
