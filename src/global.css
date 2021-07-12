@@ -11,7 +11,7 @@ body {
 
 .App {
   background-color: #282c34;
-  min-height: 300px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ h2 {
 }
 
 main {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   text-align: center;
 }
 footer {
