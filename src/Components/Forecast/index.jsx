@@ -6,7 +6,7 @@ const Forecast = () => {
 
     let [city, setCity] = useState('');
     let [unit, setUnit] = useState('imperial');
-    let [responseObj, setResponseObj] = useState({});
+    let [weather, setWeather] = useState({});
     const uriEncodedCity = encodeURIComponent(city);
 
     let [error, setError] = useState(false);
@@ -20,7 +20,7 @@ const Forecast = () => {
         }
         // Clear state in preparation for new data
         setError(false);
-        setResponseObj({});
+        setWeather({});
        
         setLoading(true);
 
@@ -33,11 +33,11 @@ const Forecast = () => {
 	}
 })
         .then(response => response.json())
-        .then(response => {
-            if (response.cod !== 200) {
+        .then(data => {
+            if (data.cod !== 200) {
                 throw new Error()
             }
-            setResponseObj(response); /* displays API fetch data as {responseObj} */
+            setWeather(data); /* displays API fetch data as {data} */
             setLoading(false);
         })
         .catch(err => {
@@ -52,10 +52,10 @@ const Forecast = () => {
             <h2>Find Current Weather Conditions</h2>
 
             <Conditions 
-            responseObj={responseObj}
+            weather={weather}
             error={error}
             loading={loading} 
-            // {JSON.stringify(responseObj)} - raw JSON data from weather api
+            // {JSON.stringify(weather)} - raw JSON data from weather api
             />
 
             <form onSubmit={getForecast}>

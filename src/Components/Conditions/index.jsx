@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Conditions.module.css'
 
 const conditions = (props) => {
-    const {responseObj, error, loading} = props
+    const {weather, error, loading} = props
 
     return (
         <div className={styles.Wrapper}>
@@ -13,11 +13,11 @@ const conditions = (props) => {
             {loading && <div className={styles.Loader} />}
 
             
-            {responseObj.cod === 200 ?
+            {weather.cod === 200 ?
                 /* cod === 200 means the city is valid */
                 <div>
-                    <p><strong>{responseObj.name}</strong></p>
-                    <p>It is currently {Math.round(responseObj.main.temp)} degrees out with {responseObj.weather[0].description}.</p>
+                    <p><strong>{weather.name}</strong></p>
+                    <p>It is currently {Math.round(weather.main.temp)} degrees out with {weather.weather[0].description}.</p>
                 </div>
             : null
             }
