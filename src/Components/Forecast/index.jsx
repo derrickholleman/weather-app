@@ -7,7 +7,8 @@ const Forecast = () => {
     let [city, setCity] = useState('');
     let [unit, setUnit] = useState('imperial');
     let [weather, setWeather] = useState({});
-    const uriEncodedCity = encodeURIComponent(city);
+    // escapes spaces when user is inputting city
+    const uriEncodedCity = encodeURI(city);
 
     let [error, setError] = useState(false);
     let [loading, setLoading] = useState(false);
