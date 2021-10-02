@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './Conditions.module.css'
 
-const conditions = (props) => {
-    const {weather, error, loading} = props
+const conditions = ({weather, error, loading}) => {
 
     return (
         <div className={styles.Wrapper}>
